@@ -1,11 +1,145 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>Mi primer sitio con GitHub Pages</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio - [Tu Nombre]</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1A202C;
+            color: #E2E8F0;
+        }
+        header {
+            background: linear-gradient(90deg, #2C5282, #38B2AC);
+            text-align: center;
+            padding: 40px;
+            border-bottom: 4px solid #38B2AC;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: bold;
+        }
+        header p {
+            font-size: 1.4em;
+        }
+        nav {
+            background: #2A4365;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: #E2E8F0;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        nav ul li a:hover {
+            background: #38B2AC;
+            color: #1A202C;
+        }
+        section {
+            max-width: 900px;
+            margin: auto;
+            padding: 50px;
+            background: #2D3748;
+            margin-top: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: 0.3s;
+        }
+        section:hover {
+            transform: scale(1.02);
+        }
+        h2 {
+            color: #38B2AC;
+            text-align: center;
+            font-size: 2em;
+        }
+        a {
+            color: #38B2AC;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background: #2C5282;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 1.2em;
+        }
+    </style>
 </head>
 <body>
-  <h1>¡Hola, mundo soy una bestia!</h1>
-  <p>Este es mi primer sitio alojado en GitHub Pages para crear mi cv.</p>
+    <header>
+        <h1>[Tu Nombre]</h1>
+        <p>Licenciado en Administración de Empresas | Analista de Datos</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#sobre-mi">Sobre Mí</a></li>
+            <li><a href="#trayectoria">Trayectoria</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#certificaciones">Certificaciones</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    
+    <section id="sobre-mi">
+        <h2>Sobre Mí</h2>
+        <p>Apasionado del análisis de datos, la inteligencia empresarial y la toma de decisiones basadas en información precisa.</p>
+    </section>
+    
+    <section id="trayectoria">
+        <h2>Trayectoria Profesional</h2>
+        <p>Con experiencia en consultoría, análisis financiero y herramientas como SQL, Python y Power BI.</p>
+    </section>
+    
+    <section id="proyectos">
+        <h2>Proyectos Destacados</h2>
+        <p>Desarrollo de modelos predictivos y dashboards interactivos para la toma de decisiones.</p>
+    </section>
+    
+    <section id="certificaciones">
+        <h2>Certificaciones y Títulos</h2>
+        <p>- Licenciatura en Administración de Empresas<br>
+           - Certificación en Análisis de Datos (Google / Microsoft / IBM)<br>
+           - Cursos en SQL, Python, Power BI y Machine Learning</p>
+    </section>
+    
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Email: tuemail@example.com</p>
+        <p>LinkedIn: <a href="#">Tu Perfil</a></p>
+        <p>GitHub: <a href="#">Tu Perfil</a></p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 [Tu Nombre] - Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
