@@ -1,18 +1,19 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio - Agustín Donato</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
-        
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             background: #000;
-            background-size: cover;
             color: #E2E8F0;
         }
         .background-parallax {
@@ -21,21 +22,17 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background: url('https://github.com/Adonato99/AgustinDonatoCV/blob/d640114b85e704302cfa5574d0fcecfa2d070d42/Imagenes%20GitHub/DALL%C2%B7E%202025-03-10%2015.47.29%20-%20A%20digital%20abstract%20background%20specifically%20focused%20on%20data%20analysis%2C%20in%20black%2C%20white%2C%20and%20gray%20tones.%20The%20image%20features%20detailed%20visualizations%20such%20.webp?raw=true') no-repeat center;
+            background: url('https://github.com/Adonato99/AgustinDonatoCV/blob/8a99cf321882a591242b11292fbda5b197fcfb99/Imagenes%20GitHub/DALL%C2%B7E%202025-03-10%2015.47.29%20-%20A%20digital%20abstract%20background%20specifically%20focused%20on%20data%20analysis%2C%20in%20black%2C%20white%2C%20and%20gray%20tones.%20The%20image%20features%20detailed%20visualizations%20such%20.webp?raw=true') no-repeat center;
             background-size: cover;
             z-index: -1;
             filter: blur(5px) brightness(50%);
         }
         .banner {
             width: 100%;
+            max-height: 400px;
+            object-fit: cover;
             display: block;
-            filter: grayscale(100%);
-        }
-        header {
-            background: rgba(26, 26, 26, 0.8);
-            text-align: center;
-            padding: 60px 20px;
-            color: #FFF;
+            margin: 0 auto;
         }
         nav {
             background: rgba(51, 51, 51, 0.9);
@@ -45,8 +42,6 @@
             top: 0;
             z-index: 1000;
             width: 100%;
-            margin: 0;
-            border-radius: 0;
         }
         nav ul {
             list-style: none;
@@ -69,117 +64,162 @@
             align-items: center;
             gap: 15px;
         }
-        nav ul li a img {
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-        }
         nav ul li a:hover {
             background: linear-gradient(135deg, #444, #666);
             transform: scale(1.1);
-        }
-        nav ul li a:hover {
-            background: linear-gradient(135deg, #444, #666);
-            transform: scale(1.1);
-        }
-        nav ul li a:hover {
-            background: #555;
-            border-radius: 5px;
-        }
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 50px 20px;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 15px;
-            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
-        .sobre-mi {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 20px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.05);
-            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .sobre-mi img {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
-            object-fit: cover;
-            image-rendering: crisp-edges;
-        }
-        .proyectos img {
-            width: 100%;
-            border-radius: 15px;
-            margin-top: 15px;
-            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         footer {
             background: rgba(26, 26, 26, 0.9);
             text-align: center;
             padding: 20px;
-            margin-top: 40px;
             font-size: 1.2em;
         }
     </style>
 </head>
 <body>
     <div class="background-parallax"></div>
-    <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/db009079a050bbea052d8515a39ba157adc3348f/Imagenes%20GitHub/Banner.png?raw=true" alt="Banner" class="banner">
-    
+    <img class="banner" src="https://github.com/Adonato99/AgustinDonatoCV/blob/db009079a050bbea052d8515a39ba157adc3348f/Imagenes%20GitHub/Banner.png?raw=true" alt="Banner">
     <nav>
         <ul>
-            <li><a href="#sobre-mi" style="display: flex; align-items: center; gap: 15px; font-size: 1.8em; padding: 25px 50px; text-align:center;">><img src="https://github.com/Adonato99/AgustinDonatoCV/blob/237c23a1862fe15383af2b1cc6eabd67a4825a7e/Imagenes%20GitHub/Sobre%20mi.png?raw=true" alt="Sobre Mí" style="width: 90px; height: 90px; border-radius: 10px; margin-left: 10px;">>>> Sobre Mí</a></li>
-            <li><a href="#trayectoria" style="display: flex; align-items: center; gap: 15px; font-size: 1.8em; padding: 25px 40px;">Trayectoria</a></li>
-            <li><a href="#proyectos" style="display: flex; align-items: center; gap: 15px; font-size: 1.8em; padding: 25px 40px;">Proyectos</a></li>
-            <li><a href="#certificaciones" style="display: flex; align-items: center; gap: 15px; font-size: 1.8em; padding: 25px 40px;">Certificaciones</a></li>
-            <li><a href="#contacto" style="display: flex; align-items: center; gap: 15px; font-size: 1.8em; padding: 25px 40px;">Contacto</a></li>
+            <li><a href="#sobre-mi" style="display: flex; align-items: center; gap: 10px;"><img src="https://github.com/Adonato99/AgustinDonatoCV/blob/8a99cf321882a591242b11292fbda5b197fcfb99/Imagenes%20GitHub/Sobre%20mi.png?raw=true" alt="Sobre Mí" style="width: 100px; height: 100px;"> <span style="margin-left: -20px;">Sobre Mí</span></a></li>
+            
+            <li><a href="#trayectoria" style="display: flex; align-items: center; gap: 10px;"><img src="https://github.com/Adonato99/AgustinDonatoCV/blob/971db27dfd25c2996b4414787526f31d9e859907/Imagenes%20GitHub/Trayectoria.png?raw=true" alt="Trayectoria" style="width: 150px; height: 100px;"> <span style="margin-left: -20px;">Trayectoria</span></a></li>
+            <li><a href="#proyectos" style="display: flex; align-items: center; gap: -420px;"><img src="https://github.com/Adonato99/AgustinDonatoCV/blob/971db27dfd25c2996b4414787526f31d9e859907/Imagenes%20GitHub/Proyectos.png?raw=true" alt="Proyectos" style="width: 100px; height: 100px;"> <span style="margin-left: -3px;">Proyectos</span></a></li>
+            <li><a href="#certificaciones" style="display: flex; align-items: center; gap: 10px;"><img src="https://github.com/Adonato99/AgustinDonatoCV/blob/971db27dfd25c2996b4414787526f31d9e859907/Imagenes%20GitHub/Certificaciones.png?raw=true" alt="Certificaciones" style="width: 100px; height: 100px;"> <span style="margin-left: -20px;">Certificaciones</span></a></li>
+            
         </ul>
     </nav>
     
-    
-    
-    
-    
-    <section id="sobre-mi" class="container sobre-mi" style="margin-top: 100px;">
-        <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/db009079a050bbea052d8515a39ba157adc3348f/Imagenes%20GitHub/WhatsApp%20Image%202025-03-10%20at%2012.21.13.jpeg?raw=true" alt="Foto de Agustín Donato" style="mix-blend-mode: multiply;">
-        <div>
-            <h2>Sobre Mí</h2>
-            <p>Soy Licenciado en Administración de Empresas y he descubierto en el análisis de datos una herramienta poderosa para transformar la información en estrategias que impulsan el crecimiento. Mi experiencia me ha enseñado que cada detalle marca la diferencia. Mi compromiso por aprender continuamente y mi afán por explorar nuevas herramientas y metodologías en el campo del análisis de datos me permiten ofrecer soluciones creativas y prácticas, optimizando procesos y respaldando decisiones estratégicas.</p>
+    <section id="sobre-mi" class="container" style="padding: 60px; text-align: center; background: rgba(255, 255, 255, 0.05); border-radius: 15px; box-shadow: 0 6px 15px rgba(255, 255, 255, 0.15); max-width: 900px; margin: 50px auto;">
+        <h2 style="font-size: 2.5em; color: #FFF; text-transform: uppercase; letter-spacing: 2px;">Sobre Mí</h2>
+        <div style="display: flex; flex-direction: column; align-items: center; text-align: left; gap: 20px;">
+            <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/971db27dfd25c2996b4414787526f31d9e859907/Imagenes%20GitHub/WhatsApp%20Image%202025-03-10%20at%2012.21.13.jpeg?raw=true" alt="Foto de Perfil" style="width: 220px; height: 220px; border-radius: 50%; object-fit: cover; box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);">
+            <p style="font-size: 1.4em; color: #E2E8F0; max-width: 700px; line-height: 1.6;">
+                Soy Licenciado en Administración de Empresas y he encontrado en el análisis de datos una herramienta clave para transformar información en estrategias que generan crecimiento y eficiencia. Mi experiencia me ha enseñado que cada dato cuenta y que una visión detallada puede marcar la diferencia en la toma de decisiones estratégicas.
+                <br><br>
+                Mi pasión por el aprendizaje continuo y la exploración de nuevas herramientas en el mundo del análisis de datos me permiten diseñar soluciones innovadoras y efectivas. Desde el desarrollo de dashboards interactivos hasta la implementación de modelos predictivos, mi enfoque está en optimizar procesos y convertir datos en conocimiento útil para la mejora del rendimiento empresarial.
+            </p>
+            
         </div>
+            
+            
+    </section>
+    <style>
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+    
+    <section id="trayectoria" class="container" style="padding: 60px; text-align: center; background: rgba(255, 255, 255, 0.05); border-radius: 15px; box-shadow: 0 6px 15px rgba(255, 255, 255, 0.15); max-width: 900px; margin: 50px auto;">
+        <h2 style="font-size: 2.5em; color: #FFF; text-transform: uppercase; letter-spacing: 2px;">Trayectoria</h2>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 30px;">
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div style="width: 20px; height: 20px; background: #B0B0B0; border-radius: 50%;"></div>
+                <div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; width: 600px; text-align: left;">
+                    <h3 style="color: #FFF; margin: 0;">Control de Gestión - Vittal</h3>
+                    <p style="color: #E2E8F0; font-size: 1.1em;">Jun 2024 - Actualidad | Generación de reportes en Power BI y análisis de datos para proveer insights clave que respaldan la toma de decisiones estratégicas.</p>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div style="width: 20px; height: 20px; background: #A8A8A8; border-radius: 50%;"></div>
+                <div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; width: 600px; text-align: left;">
+                    <h3 style="color: #FFF; margin: 0;">Analista Junior de Reportería y Análisis de Datos - D&G Consultora</h3>
+                    <p style="color: #E2E8F0; font-size: 1.1em;">May 2022 - Actualidad | Creación y optimización de dashboards interactivos en Power BI, colaborando con clientes para generar insights que facilitan la toma de decisiones.</p>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div style="width: 20px; height: 20px; background: #C0C0C0; border-radius: 50%;"></div>
+                <div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; width: 600px; text-align: left;">
+                    <h3 style="color: #FFF; margin: 0;">Analista de Datos - Familia Parra</h3>
+                    <p style="color: #E2E8F0; font-size: 1.1em;">Mar 2023 - Nov 2024 | Desarrollo de dashboards y capacitación en Power BI, definiendo KPIs y proyecciones para optimizar procesos en la empresa.</p>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div style="width: 20px; height: 20px; background: #D0D0D0; border-radius: 50%;"></div>
+                <div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; width: 600px; text-align: left;">
+                    <h3 style="color: #FFF; margin: 0;">Implementación de Sistemas de Control - BioSoluciones</h3>
+                    <p style="color: #E2E8F0; font-size: 1.1em;">Ago 2023 - Ene 2024 | Implementación de un sistema de control de gestión y ajuste de cuentas contables, fortaleciendo módulos clave de proveedores, consumo y producción.</p>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div style="width: 20px; height: 20px; background: #E0E0E0; border-radius: 50%;"></div>
+                <div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; width: 600px; text-align: left;">
+                    <h3 style="color: #FFF; margin: 0;">Encargado - Carillon Miami Wellness Resort</h3>
+                    <p style="color: #E2E8F0; font-size: 1.1em;">Dic 2021 - May 2022 | Supervisión y capacitación del personal de piscina y playa, asegurando altos estándares de calidad y seguridad en las instalaciones.</p>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div style="width: 20px; height: 20px; background: #F0F0F0; border-radius: 50%;"></div>
+                <div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; width: 600px; text-align: left;">
+                    <h3 style="color: #FFF; margin: 0;">Emprendedor - Sport As</h3>
+                    <p style="color: #E2E8F0; font-size: 1.1em;">Mar 2020 - Nov 2020 | Gestión integral de un negocio de artículos deportivos, implementando estrategias de marketing digital y administrando inventarios.</p>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div style="width: 20px; height: 20px; background: #FFFFFF; border-radius: 50%;"></div>
+                <div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; width: 600px; text-align: left;">
+                    <h3 style="color: #FFF; margin: 0;">Administrativo Junior - Kumon Cerro Chico</h3>
+                    <p style="color: #E2E8F0; font-size: 1.1em;">Mar 2018 - Nov 2023 | Facturación, control de stock y gestión de cobranzas, coordinando con proveedores para garantizar precisión y eficiencia en los procesos administrativos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+    <section id="proyectos" class="container" style="padding: 50px; text-align: center;">
+        <h2 style="font-size: 2em; color: #FFF;">📊 Proyectos</h2>
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; width: 300px;">
+                <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/main/Imagenes%20GitHub/Proyecto1.png?raw=true" alt="Proyecto 1" style="width: 100%; border-radius: 10px; transition: transform 0.3s ease-in-out; cursor: pointer;" onclick="expandImage(this)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                <h3 style="color: #FFF;">Análisis de Ventas</h3>
+                <p style="color: #E2E8F0;">Dashboard interactivo con Power BI para visualizar tendencias de ventas.</p>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; width: 300px;">
+                <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/main/Imagenes%20GitHub/Proyecto2.png?raw=true" alt="Proyecto 2" style="width: 100%; max-width: 800px; border-radius: 10px; transition: transform 0.3s ease-in-out; cursor: pointer;" onclick="expandImage(this)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                <h3 style="color: #FFF;">Predicción de Demanda</h3>
+                <p style="color: #E2E8F0;">Modelo de machine learning para prever la demanda de productos.</p>
+            </div>
         </div>
     </section>
     
-    <section id="proyectos" class="container proyectos">
-        <h2>Proyectos Destacados</h2>
-        <img src="proyecto1.jpg" alt="Ejemplo de proyecto 1">
-        <img src="proyecto2.jpg" alt="Ejemplo de proyecto 2">
-        <p>Desarrollo de modelos predictivos y dashboards interactivos para la toma de decisiones.</p>
+    <script>
+        function expandImage(img) {
+            let modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'transparent';
+            modal.style.display = 'flex';
+            modal.style.justifyContent = 'center';
+            modal.style.alignItems = 'center';
+            modal.style.zIndex = '1000';
+            modal.onclick = function() { document.body.removeChild(modal); };
+            
+            let imgClone = document.createElement('img');
+            imgClone.src = img.src;
+            imgClone.style.maxWidth = '60%';
+            imgClone.style.maxHeight = '60%';
+            imgClone.style.borderRadius = '10px';
+            modal.appendChild(imgClone);
+            document.body.appendChild(modal);
+        }
+    </script>
+    <section id="certificaciones" class="container" style="padding: 60px; text-align: center; background: rgba(255, 255, 255, 0.05); border-radius: 15px; box-shadow: 0 6px 15px rgba(255, 255, 255, 0.15); max-width: 900px; margin: 50px auto;">
+        <h2 style="font-size: 2.5em; color: #FFF; text-transform: uppercase; letter-spacing: 2px;">Certificaciones</h2>
+        <div style="display: flex; justify-content: center; gap: 20px; overflow-x: auto; padding: 20px; white-space: nowrap; scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: rgba(80, 80, 80, 0.5) transparent;">
+            <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/e621fdc501c8f1cc733f6b56fa974a08cf11e99a/Imagenes%20GitHub/Cerificado%20Data%20Science_page-0001.jpg?raw=true" alt="Certificado Data Science" style="width: 250px; height: auto; border-radius: 10px; transition: transform 0.3s ease-in-out; cursor: pointer; animation: slide 10s linear infinite;" onclick="expandImage(this)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+            <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/e621fdc501c8f1cc733f6b56fa974a08cf11e99a/Imagenes%20GitHub/Data%20analytcis.jpeg?raw=true" alt="Certificado Data Analytics" style="width: 250px; height: auto; border-radius: 10px; transition: transform 0.3s ease-in-out; cursor: pointer; animation: slide 10s linear infinite;" onclick="expandImage(this)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+            <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/e621fdc501c8f1cc733f6b56fa974a08cf11e99a/Imagenes%20GitHub/UTN%20-%20Base%20Datos_page-0001.jpg?raw=true" alt="Certificado Base de Datos UTN" style="width: 250px; height: auto; border-radius: 10px; transition: transform 0.3s ease-in-out; cursor: pointer; animation: slide 10s linear infinite;" onclick="expandImage(this)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+            <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/e621fdc501c8f1cc733f6b56fa974a08cf11e99a/Imagenes%20GitHub/Tableu.jpeg?raw=true" alt="Certificado Tableau" style="width: 250px; height: auto; border-radius: 10px; transition: transform 0.3s ease-in-out; cursor: pointer; animation: slide 10s linear infinite;" onclick="expandImage(this)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+            <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/e621fdc501c8f1cc733f6b56fa974a08cf11e99a/Imagenes%20GitHub/procesamiento%20de%20datos.jpeg?raw=true" alt="Certificado Procesamiento de Datos" style="width: 250px; height: auto; border-radius: 10px; transition: transform 0.3s ease-in-out; cursor: pointer; animation: slide 10s linear infinite;" onclick="expandImage(this)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
     </section>
-    
-    <section id="certificaciones" class="container">
-        <h2>Certificaciones y Títulos</h2>
-        <p>- Licenciatura en Administración de Empresas<br>
-           - Certificación en Análisis de Datos (Google / Microsoft / IBM)<br>
-           - Cursos en SQL, Python, Power BI y Machine Learning</p>
-    </section>
-    
-    <section id="contacto" class="container">
-        <h2>Contacto</h2>
-        <p>Email: tuemail@example.com</p>
-        <p>LinkedIn: <a href="#">Tu Perfil</a></p>
-        <p>GitHub: <a href="#">Tu Perfil</a></p>
-    </section>
-    
-    <footer>
-        <p>&copy; 2024 Agustín Donato - Todos los derechos reservados.</p>
-    </footer>
 </body>
 </html>
