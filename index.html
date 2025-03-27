@@ -1,252 +1,219 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous">        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                let modal = document.querySelector('body > div[style*="position: fixed"]');
-                if (modal) {
-                    document.body.removeChild(modal);
-                }
-            }
-        });
-    </script>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #000;
-            color: #E2E8F0;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Portafolio</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        let modal = document.querySelector('body > div[style*="position: fixed"]');
+        if (modal) {
+          document.body.removeChild(modal);
         }
-        .background-parallax {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: url('https://github.com/Adonato99/AgustinDonatoCV/blob/8a99cf321882a591242b11292fbda5b197fcfb99/Imagenes%20GitHub/DALL%C2%B7E%202025-03-10%2015.47.29%20-%20A%20digital%20abstract%20background%20specifically%20focused%20on%20data%20analysis%2C%20in%20black%2C%20white%2C%20and%20gray%20tones.%20The%20image%20features%20detailed%20visualizations%20such%20.webp?raw=true') no-repeat center;
-            background-size: cover;
-            z-index: -1;
-            filter: blur(5px) brightness(50%);
-        }
-        .banner {
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            display: block;
-            margin: 0 auto;
-        }
-        nav {
-            background: rgba(51, 51, 51, 0.9);
-            padding: 20px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            width: 100%;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
-        nav ul li a {
-            color: #FFF;
-            text-decoration: none;
-            font-size: 1.5em;
-            padding: 20px 35px;
-            background: linear-gradient(135deg, #2E2E2E, #444);
-            border-radius: 15px;
-            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease-in-out;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        nav ul li a:hover {
-            background: linear-gradient(135deg, #444, #666);
-            transform: scale(1.1);
-        }
-        footer {
-            background: rgba(26, 26, 26, 0.9);
-            text-align: center;
-            padding: 20px;
-            font-size: 1.2em;
-        }
-            @keyframes slideLoop {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
-        }
-    </style>
-<script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('nav ul li a');
+      }
+    });
+    
+    function expandImage(img) {
+      if (document.querySelector('.modal')) return;
+      let modal = document.createElement('div');
+      modal.className = 'modal';
+      modal.style.position = 'fixed';
+      modal.style.top = '0';
+      modal.style.left = '0';
+      modal.style.width = '100%';
+      modal.style.height = '100%';
+      modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+      modal.style.display = 'flex';
+      modal.style.justifyContent = 'center';
+      modal.style.alignItems = 'center';
+      modal.style.zIndex = '10000';
 
-            function changeActiveSection() {
-                let scrollPosition = window.scrollY + 100;
-                
-                sections.forEach(section => {
-                    let top = section.offsetTop;
-                    let height = section.offsetHeight;
-                    let id = section.getAttribute('id');
-                    
-                    if (scrollPosition >= top && scrollPosition < top + height) {
-                        navLinks.forEach(link => {
-                            link.style.background = 'linear-gradient(135deg, #2E2E2E, #444)';
-                        });
-                        document.querySelector(`nav ul li a[href='#${id}']`).style.background = 'linear-gradient(135deg, #555, #777)';
-                    }
-                });
-            }
-            
-            window.addEventListener('scroll', changeActiveSection);
-        });
-    </script>
+      let imgClone = document.createElement('img');
+      imgClone.src = img.src;
+      imgClone.style.maxWidth = '90%';
+      imgClone.style.maxHeight = '90%';
+      imgClone.style.borderRadius = '10px';
+      modal.appendChild(imgClone);
+
+      modal.addEventListener('click', function () {
+        document.body.removeChild(modal);
+      });
+
+      document.body.appendChild(modal);
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #E2E8F0;
+    }
+    .background-parallax {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: url('https://github.com/Adonato99/AgustinDonatoCV/blob/8a99cf321882a591242b11292fbda5b197fcfb99/Imagenes%20GitHub/DALL%C2%B7E%202025-03-10%2015.47.29%20-%20A%20digital%20abstract%20background%20specifically%20focused%20on%20data%20analysis%2C%20in%20black%2C%20white%2C%20and%20gray%20tones.%20The%20image%20features%20detailed%20visualizations%20such%20.webp?raw=true') no-repeat center;
+      background-size: cover;
+      z-index: -1;
+      filter: blur(5px) brightness(50%);
+    }
+    .banner {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+    }
+    nav {
+      background: rgba(51, 51, 51, 0.9);
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    nav ul li a {
+      color: #FFF;
+      text-decoration: none;
+      font-size: 1.2em;
+      padding: 15px 25px;
+      background: linear-gradient(135deg, #2E2E2E, #444);
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease-in-out;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    nav ul li a:hover {
+      background: linear-gradient(135deg, #444, #666);
+      transform: scale(1.05);
+    }
+    nav ul li a img {
+      width: 40px;
+      height: 40px;
+    }
+  </style>
 </head>
 <body>
-    <div class="background-parallax"></div>
-    <img class="banner" src="https://github.com/Adonato99/AgustinDonatoCV/blob/db009079a050bbea052d8515a39ba157adc3348f/Imagenes%20GitHub/Banner.png?raw=true" alt="Banner">
-    <nav>
-        <ul>
-            <li><a href="#sobre-mi" style="display: flex; align-items: center; gap: 10px;"><img src="https://github.com/Adonato99/AgustinDonatoCV/blob/8a99cf321882a591242b11292fbda5b197fcfb99/Imagenes%20GitHub/Sobre%20mi.png?raw=true" alt="Sobre Mí" style="width: 100px; height: 100px;"> <span style="margin-left: -20px;">Sobre Mí</span></a></li>
-            
-            <li><a href="#certificaciones" style="display: flex; align-items: center; gap: 10px;"><img src="https://github.com/Adonato99/AgustinDonatoCV/blob/971db27dfd25c2996b4414787526f31d9e859907/Imagenes%20GitHub/Certificaciones.png?raw=true" alt="Certificaciones" style="width: 100px; height: 100px;"> <span style="margin-left: -20px;">Certificaciones</span></a></li>
-            <li><a href="#trayectoria" style="display: flex; align-items: center; gap: 10px;"><img src="https://github.com/Adonato99/AgustinDonatoCV/blob/971db27dfd25c2996b4414787526f31d9e859907/Imagenes%20GitHub/Trayectoria.png?raw=true" alt="Trayectoria" style="width: 150px; height: 100px;"> <span style="margin-left: -20px;">Trayectoria</span></a></li>
-            <li><a href="#proyectos" style="display: flex; align-items: center; gap: -420px;"><img src="https://github.com/Adonato99/AgustinDonatoCV/blob/971db27dfd25c2996b4414787526f31d9e859907/Imagenes%20GitHub/Proyectos.png?raw=true" alt="Proyectos" style="width: 100px; height: 100px;"> <span style="margin-left: -3px;">Proyectos</span></a></li>
-            <li><a href="#certificaciones" style="display: flex; align-items: center; gap: 10px;"><img src="https://github.com/Adonato99/AgustinDonatoCV/blob/971db27dfd25c2996b4414787526f31d9e859907/Imagenes%20GitHub/Certificaciones.png?raw=true" alt="Certificaciones" style="width: 100px; height: 100px;"> <span style="margin-left: -20px;">Certificaciones</span></a></li>
-            
-        </ul>
-    </nav>
-    
-    <section id="sobre-mi" class="container" style="padding: 60px; text-align: center; background: rgba(255, 255, 255, 0.05); border-radius: 15px; box-shadow: 0 6px 15px rgba(255, 255, 255, 0.15); max-width: 1200px; margin: 50px auto;">
-        <h2 style="font-size: 2.5em; color: #FFF; text-transform: uppercase; letter-spacing: 2px;">Sobre Mí</h2>
-        <div style="display: flex; flex-direction: column; align-items: center; text-align: left; gap: 20px;">
-            <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/971db27dfd25c2996b4414787526f31d9e859907/Imagenes%20GitHub/WhatsApp%20Image%202025-03-10%20at%2012.21.13.jpeg?raw=true" alt="Foto de Perfil" style="width: 220px; height: 220px; border-radius: 50%; object-fit: cover; box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);">
-            <p style="font-size: 1.4em; color: #E2E8F0; max-width: 700px; line-height: 1.6;">
-                Soy Licenciado en Administración de Empresas y he encontrado en el análisis de datos una herramienta clave para transformar información en estrategias que generan crecimiento y eficiencia. Mi experiencia me ha enseñado que cada dato cuenta y que una visión detallada puede marcar la diferencia en la toma de decisiones estratégicas.
-                <br><br>
-                Mi pasión por el aprendizaje continuo y la exploración de nuevas herramientas en el mundo del análisis de datos me permiten diseñar soluciones innovadoras y efectivas. Desde el desarrollo de dashboards interactivos hasta la implementación de modelos predictivos, mi enfoque está en optimizar procesos y convertir datos en conocimiento útil para la mejora del rendimiento empresarial.
-            </p>
-            
-        </div>
-            
-            
-            <div style="width: 20px; height: 20px; background: #808080; border-radius: 50%; margin: 10px auto;"></div>
-    </section>
-    <style>
-        @keyframes slide {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
-        }
-    </style>
-    
-    <section id="certificaciones" class="container" style="padding: 60px; text-align: center; background: rgba(255, 255, 255, 0.05); border-radius: 15px; box-shadow: 0 6px 15px rgba(255, 255, 255, 0.15); max-width: 900px; margin: 50px auto;">
-        <h2 style="font-size: 2.5em; color: #FFF; text-transform: uppercase; letter-spacing: 2px;">Certificaciones</h2>
-        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 20px; white-space: nowrap; scrollbar-width: thin; scrollbar-color: rgba(80, 80, 80, 0.5) transparent;">
-            <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/e621fdc501c8f1cc733f6b56fa974a08cf11e99a/Imagenes%20GitHub/Cerificado%20Data%20Science_page-0001.jpg?raw=true" alt="Certificado Data Science" style="width: 250px; height: auto; border-radius: 10px; transition: transform 0.3s ease-in-out; cursor: pointer; " onclick="expandImage(this)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-            <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/e621fdc501c8f1cc733f6b56fa974a08cf11e99a/Imagenes%20GitHub/Data%20analytcis.jpeg?raw=true" alt="Certificado Data Analytics" style="width: 250px; height: auto; border-radius: 10px; transition: transform 0.3s ease-in-out; cursor: pointer; " onclick="expandImage(this)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-            <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/e621fdc501c8f1cc733f6b56fa974a08cf11e99a/Imagenes%20GitHub/UTN%20-%20Base%20Datos_page-0001.jpg?raw=true" alt="Certificado Base de Datos UTN" style="width: 250px; height: auto; border-radius: 10px; transition: transform 0.3s ease-in-out; cursor: pointer; " onclick="expandImage(this)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-            <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/e621fdc501c8f1cc733f6b56fa974a08cf11e99a/Imagenes%20GitHub/Tableu.jpeg?raw=true" alt="Certificado Tableau" style="width: 250px; height: auto; border-radius: 10px; transition: transform 0.3s ease-in-out; cursor: pointer; " onclick="expandImage(this)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-            <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/e621fdc501c8f1cc733f6b56fa974a08cf11e99a/Imagenes%20GitHub/procesamiento%20de%20datos.jpeg?raw=true" alt="Certificado Procesamiento de Datos" style="width: 250px; height: auto; border-radius: 10px; transition: transform 0.3s ease-in-out; cursor: pointer; " onclick="expandImage(this)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-        </div>
-    </section>
-    
-    <section id="trayectoria" class="container" style="padding: 60px; text-align: center; background: rgba(255, 255, 255, 0.05); border-radius: 15px; box-shadow: 0 6px 15px rgba(255, 255, 255, 0.15); max-width: 900px; margin: 50px auto;">
-        <h2 style="font-size: 2.5em; color: #FFF; text-transform: uppercase; letter-spacing: 2px;">Trayectoria</h2>
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 30px;">
-            <div style="display: flex; align-items: center; gap: 20px;">
-                <div style="width: 20px; height: 20px; background: #B0B0B0; border-radius: 50%;"></div>
-                <div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; width: 600px; text-align: left;">
-                    <h3 style="color: #FFF; margin: 0;">Control de Gestión - Vittal</h3>
-                    <p style="color: #E2E8F0; font-size: 1.1em;">Jun 2024 - Actualidad | Generación de reportes en Power BI y análisis de datos para proveer insights clave que respaldan la toma de decisiones estratégicas.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <style>
-        @keyframes slide {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
-        }
-    </style>
-    <section id="proyectos" class="container" style="padding: 50px; text-align: center;">
-        <h2 style="font-size: 2em; color: #FFF;">📊 Proyectos</h2>
-        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-            <div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; width: 300px;">
-                <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/main/Imagenes%20GitHub/Proyecto1.png?raw=true" alt="Proyecto 1" style="width: 100%; border-radius: 10px; transition: transform 0.3s ease-in-out; cursor: pointer;" onclick="expandImage(this)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-                <h3 style="color: #FFF;">Análisis de Ventas</h3>
-                <p style="color: #E2E8F0;">Dashboard interactivo con Power BI para visualizar tendencias de ventas.</p>
-            </div>
-            <div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; width: 300px;">
-                <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/main/Imagenes%20GitHub/Proyecto2.png?raw=true" alt="Proyecto 2" style="width: 100%; max-width: 800px; border-radius: 10px; transition: transform 0.3s ease-in-out; cursor: pointer;" onclick="expandImage(this)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-                <h3 style="color: #FFF;">Predicción de Demanda</h3>
-                <p style="color: #E2E8F0;">Modelo de machine learning para prever la demanda de productos.</p>
-            </div>
-        </div>
-    </section>
-    
-    <script>
-        function expandImage(img) {
-            if (document.querySelector('.modal')) return;
-            let modal = document.createElement('div');
-            modal.style.position = 'fixed';
-            modal.style.top = '0';
-            modal.style.left = '0';
-            modal.style.width = '100%';
-            modal.style.height = '100%';
-            modal.style.backgroundColor = 'transparent';
-            modal.style.display = 'flex';
-            modal.style.justifyContent = 'center';
-            modal.style.alignItems = 'center';
-            modal.style.zIndex = '1000';
-            let closeButton = document.createElement('button');
-            closeButton.innerText = 'Volver al Inicio';
-            closeButton.style.position = 'absolute';
-            closeButton.style.bottom = '20px';
-            closeButton.style.padding = '10px 20px';
-            closeButton.style.fontSize = '1.2em';
-            closeButton.style.background = 'rgba(255, 255, 255, 0.1)';
-            closeButton.style.color = '#FFF';
-            closeButton.style.border = 'none';
-            closeButton.style.cursor = 'pointer';
-            closeButton.style.borderRadius = '5px';
-            closeButton.onclick = function() { document.body.removeChild(modal); };
-            modal.appendChild(closeButton);
-            
-            document.addEventListener('keydown', function(event) {
-                if (event.key === 'Escape') {
-                    document.body.removeChild(modal);
-                }
-            });
-            
-            let imgClone = document.createElement('img');
-            imgClone.src = img.src;
-            imgClone.style.maxWidth = '60%';
-            imgClone.style.maxHeight = '60%';
-            imgClone.style.borderRadius = '10px';
-            modal.appendChild(imgClone);
-            document.body.appendChild(modal);
-        }
-    </script>
-    <section id="certificaciones" class="container" style="padding: 60px; text-align: center; background: rgba(255, 255, 255, 0.05); border-radius: 15px; box-shadow: 0 6px 15px rgba(255, 255, 255, 0.15); max-width: 900px; margin: 50px auto;">
-        <h2 style="font-size: 2.5em; color: #FFF; text-transform: uppercase; letter-spacing: 2px;">Certificaciones</h2>
-        <div style="display: flex; justify-content: center; gap: 20px; display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; white-space: nowrap; scrollbar-width: thin; scrollbar-color: rgba(80, 80, 80, 0.5) transparent;">
-            <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/e621fdc501c8f1cc733f6b56fa974a08cf11e99a/Imagenes%20GitHub/Cerificado%20Data%20Science_page-0001.jpg?raw=true" alt="Certificado Data Science" style="width: 250px; height: auto; border-radius: 10px; transition: transform 0.3s ease-in-out; cursor: pointer; " onclick="expandImage(this)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-            <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/e621fdc501c8f1cc733f6b56fa974a08cf11e99a/Imagenes%20GitHub/Data%20analytcis.jpeg?raw=true" alt="Certificado Data Analytics" style="width: 250px; height: auto; border-radius: 10px; transition: transform 0.3s ease-in-out; cursor: pointer; " onclick="expandImage(this)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-            <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/e621fdc501c8f1cc733f6b56fa974a08cf11e99a/Imagenes%20GitHub/UTN%20-%20Base%20Datos_page-0001.jpg?raw=true" alt="Certificado Base de Datos UTN" style="width: 250px; height: auto; border-radius: 10px; transition: transform 0.3s ease-in-out; cursor: pointer; " onclick="expandImage(this)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-            <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/e621fdc501c8f1cc733f6b56fa974a08cf11e99a/Imagenes%20GitHub/Tableu.jpeg?raw=true" alt="Certificado Tableau" style="width: 250px; height: auto; border-radius: 10px; transition: transform 0.3s ease-in-out; cursor: pointer; " onclick="expandImage(this)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-            <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/e621fdc501c8f1cc733f6b56fa974a08cf11e99a/Imagenes%20GitHub/procesamiento%20de%20datos.jpeg?raw=true" alt="Certificado Procesamiento de Datos" style="width: 250px; height: auto; border-radius: 10px; transition: transform 0.3s ease-in-out; cursor: pointer; " onclick="expandImage(this)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-        </div>
-    </section>
+  <div class="background-parallax"></div>
+  <img class="banner" src="https://github.com/Adonato99/AgustinDonatoCV/blob/db009079a050bbea052d8515a39ba157adc3348f/Imagenes%20GitHub/Banner.png?raw=true" alt="Banner">
+  <nav>
+    <ul>
+      <li><a href="#sobre-mi"><img src="https://github.com/Adonato99/AgustinDonatoCV/blob/8a99cf321882a591242b11292fbda5b197fcfb99/Imagenes%20GitHub/Sobre%20mi.png?raw=true" alt="Sobre Mí">Sobre Mí</a></li>
+      <li><a href="#certificaciones"><img src="https://github.com/Adonato99/AgustinDonatoCV/blob/971db27dfd25c2996b4414787526f31d9e859907/Imagenes%20GitHub/Certificaciones.png?raw=true" alt="Certificaciones">Certificaciones</a></li>
+      <li><a href="#trayectoria"><img src="https://github.com/Adonato99/AgustinDonatoCV/blob/971db27dfd25c2996b4414787526f31d9e859907/Imagenes%20GitHub/Trayectoria.png?raw=true" alt="Trayectoria">Trayectoria</a></li>
+      <li><a href="#proyectos"><img src="https://github.com/Adonato99/AgustinDonatoCV/blob/971db27dfd25c2996b4414787526f31d9e859907/Imagenes%20GitHub/Proyectos.png?raw=true" alt="Proyectos">Proyectos</a></li>
+    </ul>
+  </nav>
+
+  
+
+  <section id="sobre-mi" style="padding: 60px; text-align: center; background: rgba(255, 255, 255, 0.05); border-radius: 15px; box-shadow: 0 6px 15px rgba(255, 255, 255, 0.15); max-width: 1000px; margin: 50px auto;">
+    <h2 style="font-size: 2.5em; color: #FFF; text-transform: uppercase; letter-spacing: 2px;">Sobre Mí</h2>
+    <div style="display: flex; flex-direction: column; align-items: center; text-align: left; gap: 20px;">
+      <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/971db27dfd25c2996b4414787526f31d9e859907/Imagenes%20GitHub/WhatsApp%20Image%202025-03-10%20at%2012.21.13.jpeg?raw=true" alt="Foto de Perfil" style="width: 220px; height: 220px; border-radius: 50%; object-fit: cover; box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);">
+      <p style="font-size: 1.4em; color: #E2E8F0; max-width: 700px; line-height: 1.6;">
+        Soy Licenciado en Administración de Empresas y he encontrado en el análisis de datos una herramienta clave para transformar información en estrategias que generan crecimiento y eficiencia. Mi experiencia me ha enseñado que cada dato cuenta y que una visión detallada puede marcar la diferencia en la toma de decisiones estratégicas.
+        <br><br>
+        Mi pasión por el aprendizaje continuo y la exploración de nuevas herramientas en el mundo del análisis de datos me permiten diseñar soluciones innovadoras y efectivas. Desde el desarrollo de dashboards interactivos hasta la implementación de modelos predictivos, mi enfoque está en optimizar procesos y convertir datos en conocimiento útil para la mejora del rendimiento empresarial.
+      </p>
+    </div>
+  </section>
+
+  <section id="certificaciones" style="padding: 60px; text-align: center; background: rgba(255, 255, 255, 0.05); border-radius: 15px; box-shadow: 0 6px 15px rgba(255, 255, 255, 0.15); max-width: 1000px; margin: 50px auto;">
+  <h2 style="font-size: 2.5em; color: #FFF; text-transform: uppercase; letter-spacing: 2px;">Certificaciones</h2>
+  <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 20px;">
+    <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/e621fdc501c8f1cc733f6b56fa974a08cf11e99a/Imagenes%20GitHub/Cerificado%20Data%20Science_page-0001.jpg?raw=true" alt="Certificado Data Science" style="width: 250px; border-radius: 10px; cursor: pointer; transition: transform 0.3s ease-in-out;" onclick="expandImage(this)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/e621fdc501c8f1cc733f6b56fa974a08cf11e99a/Imagenes%20GitHub/Data%20analytcis.jpeg?raw=true" alt="Certificado Data Analytics" style="width: 250px; border-radius: 10px; cursor: pointer; transition: transform 0.3s ease-in-out;" onclick="expandImage(this)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/e621fdc501c8f1cc733f6b56fa974a08cf11e99a/Imagenes%20GitHub/UTN%20-%20Base%20Datos_page-0001.jpg?raw=true" alt="Certificado Base de Datos UTN" style="width: 250px; border-radius: 10px; cursor: pointer; transition: transform 0.3s ease-in-out;" onclick="expandImage(this)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/e621fdc501c8f1cc733f6b56fa974a08cf11e99a/Imagenes%20GitHub/Tableu.jpeg?raw=true" alt="Certificado Tableau" style="width: 250px; border-radius: 10px; cursor: pointer; transition: transform 0.3s ease-in-out;" onclick="expandImage(this)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="https://github.com/Adonato99/AgustinDonatoCV/blob/e621fdc501c8f1cc733f6b56fa974a08cf11e99a/Imagenes%20GitHub/procesamiento%20de%20datos.jpeg?raw=true" alt="Certificado Procesamiento de Datos" style="width: 250px; border-radius: 10px; cursor: pointer; transition: transform 0.3s ease-in-out;" onclick="expandImage(this)" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+  </div>
+</section>
+
+<section id="trayectoria" style="padding: 60px; text-align: center; background: rgba(255, 255, 255, 0.05); border-radius: 15px; box-shadow: 0 6px 15px rgba(255, 255, 255, 0.15); max-width: 1000px; margin: 50px auto;">
+  <h2 style="font-size: 2.5em; color: #FFF; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 50px;">Trayectoria</h2>
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 60px;">
+    <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px; width: 600px; text-align: left;">
+      <h3 style="color: #FFF; margin: 0;">Control de Gestión - Vittal</h3>
+      <p style="color: #E2E8F0; font-size: 1.1em;">Jun 2024 - Actualidad | Generación de reportes en Power BI y análisis de datos para proveer insights clave que respaldan la toma de decisiones estratégicas.</p>
+    </div>
+    <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px; width: 600px; text-align: left;">
+      <h3 style="color: #FFF; margin: 0;">Analista Junior de Reportería - D&G Consultora</h3>
+      <p style="color: #E2E8F0; font-size: 1.1em;">May 2022 – Actualidad | Creación de tableros en Power BI, análisis de datos y presentación de informes para clientes y stakeholders.</p>
+    </div>
+    <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px; width: 600px; text-align: left;">
+      <h3 style="color: #FFF; margin: 0;">Analista de Datos - Familia Parra</h3>
+      <p style="color: #E2E8F0; font-size: 1.1em;">Mar 2023 – Nov 2024 | Implementación y uso de Power BI, desarrollo de dashboards y definición de KPIs para la toma de decisiones.</p>
+    </div>
+    <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px; width: 600px; text-align: left;">
+      <h3 style="color: #FFF; margin: 0;">Implementación de Sistemas de Control - BioSoluciones</h3>
+      <p style="color: #E2E8F0; font-size: 1.1em;">Ago 2023 – Ene 2024 | Implementación de sistema de control de gestión y ajuste contable en módulos de proveedores, consumo y producción.</p>
+    </div>
+    <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px; width: 600px; text-align: left;">
+      <h3 style="color: #FFF; margin: 0;">Encargado - Carillon Miami Wellness Resort</h3>
+      <p style="color: #E2E8F0; font-size: 1.1em;">Dic 2021 – May 2022 | Supervisión y capacitación del personal en áreas de piscina y playa, asegurando calidad, seguridad y limpieza.</p>
+    </div>
+    <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px; width: 600px; text-align: left;">
+      <h3 style="color: #FFF; margin: 0;">Emprendedor - Sport As</h3>
+      <p style="color: #E2E8F0; font-size: 1.1em;">Mar 2020 – Nov 2020 | Gestión de negocio deportivo con ventas online, marketing digital e inventario.</p>
+    </div>
+  </div>
+</section>
+
+  <section id="tecnologias" style="padding: 40px 20px; background: rgba(255, 255, 255, 0.03); text-align: center;">
+  <h2 style="font-size: 2em; color: #FFF; margin-bottom: 30px;">Tecnologías y herramientas que utilizo</h2>
+  <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 40px;">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" alt="PostgreSQL" title="PostgreSQL" style="height: 50px;">
+      <span style="color: #E2E8F0; font-size: 0.9em;">PostgreSQL</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+      <img src="https://www.r-project.org/logo/Rlogo.png" alt="R" title="R" style="height: 50px;">
+      <span style="color: #E2E8F0; font-size: 0.9em;">R</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+      <img src="https://cdn.iconscout.com/icon/free/png-256/python-14-569257.png" alt="Python" title="Python" style="height: 50px;">
+      <span style="color: #E2E8F0; font-size: 0.9em;">Python</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI" title="Power BI" style="height: 50px;">
+      <span style="color: #E2E8F0; font-size: 0.9em;">Power BI</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+      <img src="https://cdn.worldvectorlogo.com/logos/tableau-software.svg" alt="Tableau" title="Tableau" style="height: 50px;">
+      <span style="color: #E2E8F0; font-size: 0.9em;">Tableau</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+      <img src="https://cdn.iconscout.com/icon/free/png-256/mysql-3521596-2945040.png" alt="MySQL" title="MySQL" style="height: 50px;">
+      <span style="color: #E2E8F0; font-size: 0.9em;">MySQL</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732220.png" alt="Excel" title="Excel" style="height: 50px;">
+      <span style="color: #E2E8F0; font-size: 0.9em;">Excel</span>
+    </div>
+  </div>
+</section>
+  </section>
 </body>
 </html>
